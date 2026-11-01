@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
+import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa'
 import emailjs from '@emailjs/browser'
 
 const Contact = () => {
@@ -92,6 +92,10 @@ const Contact = () => {
               <div className="flex items-center gap-3 text-gray-300 group hover:translate-x-2 transition-transform duration-300">
                 <FaEnvelope className="text-blue-400 text-xl group-hover:scale-110 transition-transform" />
                 <a href="mailto:gibbor3kg@gmail.com" className="hover:text-blue-400 transition-colors">gibbor3kg@gmail.com</a>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300 group hover:translate-x-2 transition-transform duration-300">
+                <FaPhoneAlt className="text-blue-400 text-xl group-hover:scale-110 transition-transform" />
+                <a href="tel:+250791246654" className="hover:text-blue-400 transition-colors">0791246654</a>
               </div>
               <div className="flex items-center gap-3 text-gray-300 group hover:translate-x-2 transition-transform duration-300">
                 <FaMapMarkerAlt className="text-blue-400 text-xl group-hover:scale-110 transition-transform" />
