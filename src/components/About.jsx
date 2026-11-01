@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react'
 import {
   FaGraduationCap,
-  FaBriefcase,
   FaHeart,
-  FaRocket,
   FaDatabase,
   FaBolt,
   FaPaintBrush,
@@ -20,35 +18,22 @@ const About = () => {
 
   const timeline = [
     {
-      year: '2018 – 2022',
-      title: 'B.E. in Electronic Engineering',
-      desc: 'Focused on embedded systems, IoT, and signal processing. Graduated with honors.',
+      year: '2026',
+      title: 'Software Development — Mutovu TSS',
+      desc: 'Completed studies in Software Development.',
       icon: <FaGraduationCap />,
-    },
-    {
-      year: '2022 – 2023',
-      title: 'Full‑Stack Developer @ TechStart',
-      desc: 'Built REST APIs + React dashboards for logistics clients. Optimized PostgreSQL queries.',
-      icon: <FaBriefcase />,
-    },
-    {
-      year: '2023 – Present',
-      title: 'Freelance Engineer & Consultant',
-      desc: 'Delivering full‑stack solutions + IoT prototypes. Specializing in database design and real‑time systems.',
-      icon: <FaRocket />,
     },
   ]
 
   const passions = [
-    { icon: <FaDatabase />, text: 'Database optimization & sharding' },
-    { icon: <FaBolt />, text: 'Real‑time systems (WebSockets, MQTT)' },
-    { icon: <FaPaintBrush />, text: 'Clean UI with Tailwind & Framer Motion' },
-    { icon: <FaMicrochip />, text: 'Embedded electronics & PCB design' },
+    { icon: <FaDatabase />, text: 'Database fundamentals' },
+    { icon: <FaBolt />, text: 'Building useful software' },
+    { icon: <FaPaintBrush />, text: 'Web design and user interfaces' },
+    { icon: <FaMicrochip />, text: 'Exploring new technology' },
   ]
 
   return (
     <section id="about" className="py-20 bg-black overflow-hidden relative">
-      {/* Animated gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-transparent to-purple-900/20 animate-pulse"></div>
 
       <div
@@ -64,17 +49,16 @@ const About = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">
-          {/* Left column: bio + passions */}
           <div className="space-y-6">
             <div className="bg-gray-900/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-800 hover:border-blue-500/50 transition-all duration-300 shadow-lg shadow-blue-500/5 hover:shadow-blue-500/20">
               <p className="text-gray-300 text-lg leading-relaxed">
-                I'm <span className="text-blue-400 font-semibold">Gibbor Tech</span>, a full‑stack developer 
-                with a degree in <span className="text-purple-300">Electronic Engineering</span>. 
-                I build efficient systems from hardware to UI – designing databases, backend APIs, and frontend experiences that scale.
+                I'm <span className="text-blue-400 font-semibold">Gibbor Tech</span>, a software developer who completed
+                Software Development studies at <span className="text-purple-300">Mutovu TSS in 2026</span>.
+                I enjoy learning, solving problems, and building practical software projects.
               </p>
               <p className="mt-4 text-gray-300 leading-relaxed">
-                Currently exploring <span className="text-purple-300">edge computing & predictive maintenance</span>, 
-                combining my EE background with modern web technologies.
+                I'm continuing to develop my programming skills by exploring web technologies and creating projects
+                that solve real problems.
               </p>
             </div>
 
@@ -93,11 +77,10 @@ const About = () => {
             </div>
           </div>
 
-          {/* Right column: timeline */}
           <div>
             <div className="bg-gray-900/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-800 hover:border-blue-500/50 transition-all duration-300 shadow-lg shadow-blue-500/5 hover:shadow-blue-500/20 h-full">
               <h3 className="text-xl font-semibold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-6 flex items-center gap-2">
-                <FaBriefcase /> Journey
+                <FaGraduationCap /> Education
               </h3>
               <div className="space-y-6">
                 {timeline.map((item, idx) => (
