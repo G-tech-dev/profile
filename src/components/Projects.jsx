@@ -7,6 +7,7 @@ import {
   FaChartLine,
   FaWallet,
   FaBus,
+  FaGlobe,
 } from 'react-icons/fa'
 
 const Projects = () => {
@@ -39,6 +40,16 @@ const Projects = () => {
       github: 'https://github.com/G-tech-dev/SwiftPay',
       icon: <FaWallet className="text-3xl text-blue-400" />,
       category: 'Fintech / Full-Stack',
+    },
+    {
+      id: 4,
+      title: 'Videapro',
+      shortDesc: 'A live website project.',
+      fullDesc: 'Visit the live Videapro website to explore the project.',
+      tech: [],
+      live: 'https://videapro.site/',
+      icon: <FaGlobe className="text-3xl text-blue-400" />,
+      category: 'Web Project',
     },
     {
       id: 3,
@@ -109,14 +120,28 @@ const Projects = () => {
                       </span>
                     ))}
                   </div>
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm text-gray-300 hover:text-blue-400 transition"
-                  >
-                    <FaGithub /> View repository <FaExternalLinkAlt className="text-xs" />
-                  </a>
+                  <div className="flex flex-wrap gap-4">
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm text-gray-300 hover:text-blue-400 transition"
+                      >
+                        <FaGithub /> View repository <FaExternalLinkAlt className="text-xs" />
+                      </a>
+                    )}
+                    {project.live && (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm text-gray-300 hover:text-blue-400 transition"
+                      >
+                        <FaGlobe /> Visit website <FaExternalLinkAlt className="text-xs" />
+                      </a>
+                    )}
+                  </div>
                 </div>
               )}
             </article>
