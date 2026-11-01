@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { FaMicrochip } from 'react-icons/fa'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -44,7 +43,12 @@ const Navbar = () => {
             href="#home"
             className="flex items-center space-x-2 text-xl font-bold group"
           >
-            <FaMicrochip className="text-blue-500 text-2xl group-hover:rotate-12 transition-transform duration-300" />
+            <img
+              src="/favicon.svg"
+              alt=""
+              aria-hidden="true"
+              className="w-9 h-9 object-contain group-hover:scale-110 transition-transform duration-300"
+            />
             <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
               Gibbor Tech
             </span>
