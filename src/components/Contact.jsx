@@ -13,11 +13,6 @@ const Contact = () => {
   const EMAILJS_TEMPLATE_ID = 'template_irk9vqq'
   const EMAILJS_PUBLIC_KEY = 'vWQjrkJhH2e5Py0w4'
 
-  // Initialize EmailJS when component mounts
-  useEffect(() => {
-    emailjs.init(EMAILJS_PUBLIC_KEY)
-  }, [])
-
   // Entrance animation
   useEffect(() => {
     const timer = setTimeout(() => setVisible(true), 400)
@@ -31,21 +26,28 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      setFeedback({ type: 'error', message: 'Please complete all fields before sending.' })
+      return
+    }
+
     setIsSending(true)
     setFeedback({ type: '', message: '' })
 
     try {
       const templateParams = {
         from_name: formData.name,
-        from_email: formData.email,
-        message: formData.message,
+        from_email: formData.email.trim(),
+        reply_to: formData.email.trim(),
+        message: formData.message.trim(),
         to_email: 'gibbor3kg@gmail.com',
       }
 
       const response = await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
-        templateParams
+        templateParams,
+        { publicKey: EMAILJS_PUBLIC_KEY }
       )
 
       console.log('EmailJS success:', response)
@@ -56,8 +58,9 @@ const Contact = () => {
       setFormData({ name: '', email: '', message: '' })
     } catch (error) {
       console.error('EmailJS error:', error)
-      let errorMsg = '❌ Oops! Something went wrong. Please try again later.'
-      if (error.text) errorMsg += ` (${error.text})`
+      const errorMsg = error?.text
+        ? `Unable to send your message: ${error.text}`
+        : 'Unable to send your message. Please try again or email me directly at gibbor3kg@gmail.com.'
       setFeedback({ type: 'error', message: errorMsg })
     } finally {
       setIsSending(false)
