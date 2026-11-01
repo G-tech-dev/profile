@@ -91,11 +91,11 @@ const Contact = () => {
             <div className="space-y-4">
               <div className="flex items-center gap-3 text-gray-300 group hover:translate-x-2 transition-transform duration-300">
                 <FaEnvelope className="text-blue-400 text-xl group-hover:scale-110 transition-transform" />
-                <span>gibbor3kg@gmail.com</span>
+                <a href="mailto:gibbor3kg@gmail.com" className="hover:text-blue-400 transition-colors">gibbor3kg@gmail.com</a>
               </div>
               <div className="flex items-center gap-3 text-gray-300 group hover:translate-x-2 transition-transform duration-300">
                 <FaMapMarkerAlt className="text-blue-400 text-xl group-hover:scale-110 transition-transform" />
-                <span>Remote / Worldwide</span>
+                <span>Kigali, Rwanda</span>
               </div>
             </div>
           </div>
@@ -106,6 +106,7 @@ const Contact = () => {
               <input
                 type="text"
                 name="name"
+                aria-label="Your name"
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Your name"
@@ -117,6 +118,7 @@ const Contact = () => {
               <input
                 type="email"
                 name="email"
+                aria-label="Your email address"
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Email address"
@@ -127,6 +129,7 @@ const Contact = () => {
             <div>
               <textarea
                 name="message"
+                aria-label="Your message"
                 value={formData.message}
                 onChange={handleChange}
                 rows="4"
@@ -138,7 +141,7 @@ const Contact = () => {
 
             {/* Feedback message */}
             {feedback.message && (
-              <div className={`text-sm ${feedback.type === 'success' ? 'text-green-400' : 'text-red-400'}`}>
+              <div role="status" aria-live="polite" className={`text-sm ${feedback.type === 'success' ? 'text-green-400' : 'text-red-400'}`}>
                 {feedback.message}
               </div>
             )}
